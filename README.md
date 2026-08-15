@@ -1,6 +1,6 @@
 # practical-project-workspace
 A collaborative practical-learning workspace where team members practice their technical skills, build projects, share knowledge, and contribute through GitHub.
-
+```text
 practical-project-workspace/
 │
 ├── README.md
@@ -40,3 +40,26 @@ practical-project-workspace/
     ├── notes/
     ├── datasets/
     └── useful-links/
+
+
+example
+
+```text
+members/aman/
+│
+├── README.md
+│
+├── python/
+│   ├── calculator/
+│   ├── file-handler/
+│   └── mini-project/
+│
+├── machine-learning/
+│   ├── linear-regression/
+│   ├── multiple-regression/
+│   ├── classification/
+│   └── ...
+│
+└── projects/
+    ├── student-performance-predictor/
+    └── house-price-predictor/
