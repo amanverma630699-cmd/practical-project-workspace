@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Insurance Prediction</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #f0de5a;
+            max-width: 700px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0 15px;
+        }
+
+        button {
+            padding: 12px 20px;
+            cursor: pointer;
+        }
+
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            background: #1be909;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Insurance Charge Predictor</h1>
+
+    <p>
+        Model R² Score:
+        <strong>{{ "%.4f"|format(r2_score) }}</strong>
+    </p>
+
+    <form method="POST">
+
+        <label>Age</label>
+        <input type="number" name="age" required>
+
+        <label>Sex</label>
+        <select name="sex">
+            <option value="0">Male</option>
+            <option value="1">Female</option>
+        </select>
+
+        <label>BMI</label>
+        <input type="number" step="0.01" name="bmi" required>
+
+        <label>Children</label>
+        <input type="number" name="children" required>
+
+        <label>Smoker</label>
+        <select name="smoker">
+            <option value="0">Yes</option>
+            <option value="1">No</option>
+        </select>
+
+        <label>Region</label>
+        <select name="region">
+
+            <option value="0">Southeast</option>
+            <option value="1">Southwest</option>
+            <option value="2">Northeast</option>
+            <option value="3">Northwest</option>
+
+        </select>
+
+        <button type="submit">
+            Predict Insurance Charge
+        </button>
+
+    </form>
+
+
+    {% if prediction is not none %}
+
+    <div class="result">
+
+        <h2>Prediction</h2>
+
+        <p>
+            Estimated Insurance Charge:
+            <strong>${{ "%.2f"|format(prediction) }}</strong>
+        </p>
+
+    </div>
+
+    {% endif %}
+
+</body>
+
+</html>
